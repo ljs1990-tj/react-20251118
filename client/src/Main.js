@@ -1,8 +1,12 @@
 import StateEx1 from './component/UseStateEx1';
+import StateEx2 from './component/UseStateEx2';
+import EffectEx1 from './component/UseEffectEx1';
+import EffectEx2 from './component/UseEffectEx2';
 function Main(){
     return(
         <>
-            <StateEx1></StateEx1>
+      
+            <EffectEx2></EffectEx2>
         </>
     )
 }
