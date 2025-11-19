@@ -2,7 +2,10 @@
 function Footer(props){
     return <>
         <div>
-            <a href="/">{props.contents}</a>
+            <a href="/" onClick={(e)=>{
+                e.preventDefault();
+                props.fnAlert();
+            }}>{props.contents}</a>
         </div>
     </>
 }
