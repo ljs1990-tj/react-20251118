@@ -31,4 +31,18 @@ router.delete("/:productId", async (req, res) => {
     }
 })
 
+router.post("/", async (req, res) => {
+    let {productName, price} = req.body;
+    try {
+        let sql = "INSERT INTO TBL_PRODUCT(PRODUCTNAME, PRICE) VALUES(?, ?)";
+        let result = await db.query(sql, [productName, price]);
+        res.json({
+            result : result,
+            msg : "저장 완료"
+        });
+    } catch (error) {
+        console.log("에러 발생!");
+    }
+})
+
 module.exports = router;
