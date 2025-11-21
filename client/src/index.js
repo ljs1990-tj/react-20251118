@@ -6,11 +6,13 @@ import App2 from './App2';
 import App3 from './App3';
 import Main from './Main';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
-    <Main />
+    <BrowserRouter>
+        <Main />
+    </BrowserRouter>
 
 );
 

@@ -76,8 +76,13 @@ function Project(){
 
 function ContextEx(){
     let [loginFlg, setLoginFlg] = useState(true);
+    let param = {
+        loginFlg,
+        setLoginFlg
+    }
     return <>
         <PersonContext.Provider value={{loginFlg, setLoginFlg}}>
+        {/* <PersonContext.Provider value={param}> */}
             <Project></Project>
         </PersonContext.Provider>
     </>
