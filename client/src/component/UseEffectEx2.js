@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function EffectEx(){
+    const navigate = useNavigate();
     let [text, setText] = useState("");
     let [list, setList] = useState([]);
 
@@ -27,7 +29,12 @@ function EffectEx(){
        <div>text : {text}</div>
      
        <hr></hr>
-
+       <div>
+            <button onClick={()=>{
+                // location.href="/product/add"; xxx
+                navigate("/product/add");
+            }}>제품 등록</button>
+       </div>
        <table>
         <thead>
             <tr>
@@ -35,6 +42,7 @@ function EffectEx(){
                 <th>제품명</th>
                 <th>가격</th>
                 <th>삭제</th>
+                <th>수정</th>
             </tr>
         </thead>
         <tbody>
@@ -58,6 +66,11 @@ function EffectEx(){
                                     fnList();
                                 })
                         }}>삭제</button>
+                    </td>
+                    <td>
+                        <button onClick={()=>{
+                            navigate("/product/edit/" + item.productId)
+                        }}>수정</button>
                     </td>
                 </tr>
             })}

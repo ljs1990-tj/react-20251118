@@ -9,6 +9,8 @@ import ContextEx2 from './component/UseContext2';
 
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
+import ProductEdit from './component/ProductEdit';
+import MUIEx1 from './muiComponent/MUI-Ex1';
 
 function Main(){
     return(
@@ -18,6 +20,12 @@ function Main(){
                 <Route path="/context1" element={<ContextEx />}></Route>
                 <Route path="/context2" element={<ContextEx2 />}></Route>
                 <Route path="/effect" element={<EffectEx2 />}></Route>
+                
+                <Route path="/product/list" element={<EffectEx2 />}></Route>
+                <Route path="/product/add" element={<ProductAdd />}></Route>
+                <Route path="/product/edit/:productId" element={<ProductEdit />}></Route>
+
+                <Route path="/mui1" element={<MUIEx1 />}></Route>
             </Routes>
             
         </>

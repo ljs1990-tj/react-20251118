@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProductAdd(){
+    const navigate = useNavigate();
     let nameRef = useRef(null);
     let priceRef = useRef(null);
     let [price, setPrice] = useState();
@@ -35,6 +37,7 @@ function ProductAdd(){
             .then(res => res.json())
             .then(data => {
                 alert("저장되었습니다!");
+                navigate("/product/list");
 
             })
     }
